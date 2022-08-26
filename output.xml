@@ -1,150 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220826 15:20:15.693" rpa="false" schemaversion="3">
-<suite id="s1" name="Ebaycount" source="/Users/aum/Desktop/CWN Part-time/ebaycount.robot">
-<test id="s1-t1" name="ebay" line="17">
-<kw name="Get to ebay">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220826 15:57:05.339" rpa="false" schemaversion="3">
+<suite id="s1" name="Elderlycare" source="/Users/aum/Desktop/CWN Part-time/elderlycare.robot">
+<test id="s1-t1" name="Login Elderly" line="4">
 <kw name="Open Browser" library="Selenium2Library">
-<arg>${ebay}</arg>
-<arg>${browser}</arg>
+<arg>https://oauth.elderly-hd.co/testing/login</arg>
+<arg>chrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220826 15:20:15.764" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
-<status status="PASS" starttime="20220826 15:20:15.764" endtime="20220826 15:20:19.604"/>
+<msg timestamp="20220826 15:57:05.399" level="INFO">Opening browser 'chrome' to base url 'https://oauth.elderly-hd.co/testing/login'.</msg>
+<status status="PASS" starttime="20220826 15:57:05.399" endtime="20220826 15:57:09.568"/>
 </kw>
-<status status="PASS" starttime="20220826 15:20:15.764" endtime="20220826 15:20:19.604"/>
-</kw>
-<kw name="Search SteamDeck">
 <kw name="Input Text" library="Selenium2Library">
-<arg>id:gh-ac</arg>
-<arg>steamdeck</arg>
+<arg>xpath: //input[@class="form-control m-0 ng-untouched ng-pristine ng-invalid"]</arg>
+<arg>admin-testing</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220826 15:20:19.605" level="INFO">Typing text 'steamdeck' into text field 'id:gh-ac'.</msg>
-<msg timestamp="20220826 15:20:19.607" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=104.0.5112.101)
-Stacktrace:
-0   chromedriver                        0x0000000102da2ae0 chromedriver + 3828448
-1   chromedriver                        0x0000000102d37f1c chromedriver + 3391260
-2   chromedriver                        0x0000000102a30fcc chromedriver + 217036
-3   chromedriver                        0x0000000102a158ac chromedriver + 104620
-4   chromedriver                        0x0000000102a7bef0 chromedriver + 524016
-5   chromedriver                        0x0000000102a89300 chromedriver + 578304
-6   chromedriver                        0x0000000102a56010 chromedriver + 368656
-7   chromedriver                        0x0000000102d7839c chromedriver + 3654556
-8   chromedriver                        0x0000000102d7bc4c chromedriver + 3669068
-9   chromedriver                        0x0000000102d8014c chromedriver + 3686732
-10  chromedriver                        0x0000000102d7c654 chromedriver + 3671636
-11  chromedriver                        0x0000000102d5ab40 chromedriver + 3533632
-12  chromedriver                        0x0000000102d94414 chromedriver + 3769364
-13  chromedriver                        0x0000000102d94578 chromedriver + 3769720
-14  chromedriver                        0x0000000102da90f0 chromedriver + 3854576
-15  libsystem_pthread.dylib             0x000000019594426c _pthread_start + 148
-16  libsystem_pthread.dylib             0x000000019593f08c thread_start + 8
-</msg>
-<msg timestamp="20220826 15:20:19.608" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=104.0.5112.101)
-Stacktrace:
-0   chromedriver                        0x0000000102da2ae0 chromedriver + 3828448
-1   chromedriver                        0x0000000102d37f1c chromedriver + 3391260
-2   chromedriver                        0x0000000102a30fcc chromedriver + 217036
-3   chromedriver                        0x0000000102a158ac chromedriver + 104620
-4   chromedriver                        0x0000000102a7bef0 chromedriver + 524016
-5   chromedriver                        0x0000000102a89300 chromedriver + 578304
-6   chromedriver                        0x0000000102a56010 chromedriver + 368656
-7   chromedriver                        0x0000000102d7839c chromedriver + 3654556
-8   chromedriver                        0x0000000102d7bc4c chromedriver + 3669068
-9   chromedriver                        0x0000000102d8014c chromedriver + 3686732
-10  chromedriver                        0x0000000102d7c654 chromedriver + 3671636
-11  chromedriver                        0x0000000102d5ab40 chromedriver + 3533632
-12  chromedriver                        0x0000000102d94414 chromedriver + 3769364
-13  chromedriver                        0x0000000102d94578 chromedriver + 3769720
-14  chromedriver                        0x0000000102da90f0 chromedriver + 3854576
-15  libsystem_pthread.dylib             0x000000019594426c _pthread_start + 148
-16  libsystem_pthread.dylib             0x000000019593f08c thread_start + 8
-</msg>
-<status status="FAIL" starttime="20220826 15:20:19.605" endtime="20220826 15:20:19.611"/>
+<msg timestamp="20220826 15:57:09.569" level="INFO">Typing text 'admin-testing' into text field 'xpath: //input[@class="form-control m-0 ng-untouched ng-pristine ng-invalid"]'.</msg>
+<status status="PASS" starttime="20220826 15:57:09.569" endtime="20220826 15:57:09.646"/>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>xpath: //input[@class="btn btn-prim gh-spr"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220826 15:20:19.611" endtime="20220826 15:20:19.611"/>
+<kw name="Input Password" library="Selenium2Library">
+<arg>xpath: //input[@class="form-control ng-untouched ng-pristine ng-invalid"]</arg>
+<arg>password</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20220826 15:57:09.646" level="INFO">Typing password into text field 'xpath: //input[@class="form-control ng-untouched ng-pristine ng-invalid"]'.</msg>
+<msg timestamp="20220826 15:57:09.664" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20220826 15:57:09.692" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20220826 15:57:09.646" endtime="20220826 15:57:09.692"/>
 </kw>
-<status status="FAIL" starttime="20220826 15:20:19.604" endtime="20220826 15:20:19.611"/>
+<kw name="Click Button" library="Selenium2Library">
+<arg>xpath: //button[@class="btn bg-custom btn-block"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20220826 15:57:09.692" level="INFO">Clicking button 'xpath: //button[@class="btn bg-custom btn-block"]'.</msg>
+<status status="PASS" starttime="20220826 15:57:09.692" endtime="20220826 15:57:09.725"/>
 </kw>
-<kw name="Get Element Count" library="Selenium2Library">
-<var>${count}</var>
-<arg>xpath: //li[@class="s-item s-item__pl-on-bottom s-item--watch-at-corner"]</arg>
-<doc>Returns the number of elements matching ``locator``.</doc>
-<status status="NOT RUN" starttime="20220826 15:20:19.612" endtime="20220826 15:20:19.612"/>
-</kw>
-<kw name="Get Text" library="Selenium2Library">
-<var>${num}</var>
-<arg>xpath: //span[@class="BOLD"]</arg>
-<doc>Returns the text value of the element identified by ``locator``.</doc>
-<status status="NOT RUN" starttime="20220826 15:20:19.612" endtime="20220826 15:20:19.612"/>
-</kw>
-<kw name="Log To Console" library="BuiltIn">
-<arg>${count}</arg>
-<doc>Logs the given message to the console.</doc>
-<status status="NOT RUN" starttime="20220826 15:20:19.612" endtime="20220826 15:20:19.612"/>
-</kw>
-<status status="FAIL" starttime="20220826 15:20:15.763" endtime="20220826 15:20:19.612">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=104.0.5112.101)
-Stacktrace:
-0   chromedriver                        0x0000000102da2ae0 chromedriver + 3828448
-1   chromedriver                        0x0000000102d37f1c chromedriver + 3391260
-2   chromedriver                        0x0000000102a30fcc chromedriver + 217036
-3   chromedriver                        0x0000000102a158ac chromedriver + 104620
-4   chromedriver                        0x0000000102a7bef0 chromedriver + 524016
-5   chromedriver                        0x0000000102a89300 chromedriver + 578304
-6   chromedriver                        0x0000000102a56010 chromedriver + 368656
-7   chromedriver                        0x0000000102d7839c chromedriver + 3654556
-8   chromedriver                        0x0000000102d7bc4c chromedriver + 3669068
-9   chromedriver                        0x0000000102d8014c chromedriver + 3686732
-10  chromedriver                        0x0000000102d7c654 chromedriver + 3671636
-11  chromedriver                        0x0000000102d5ab40 chromedriver + 3533632
-12  chromedriver                        0x0000000102d94414 chromedriver + 3769364
-13  chromedriver                        0x0000000102d94578 chromedriver + 3769720
-14  chromedriver                        0x0000000102da90f0 chromedriver + 3854576
-15  libsystem_pthread.dylib             0x000000019594426c _pthread_start + 148
-16  libsystem_pthread.dylib             0x000000019593f08c thread_start + 8
-</status>
+<status status="PASS" starttime="20220826 15:57:05.398" endtime="20220826 15:57:09.726"/>
 </test>
-<status status="FAIL" starttime="20220826 15:20:15.693" endtime="20220826 15:20:19.614"/>
+<status status="PASS" starttime="20220826 15:57:05.339" endtime="20220826 15:57:09.726"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="Ebaycount">Ebaycount</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Elderlycare">Elderlycare</stat>
 </suite>
 </statistics>
 <errors>
-<msg timestamp="20220826 15:20:19.607" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=104.0.5112.101)
-Stacktrace:
-0   chromedriver                        0x0000000102da2ae0 chromedriver + 3828448
-1   chromedriver                        0x0000000102d37f1c chromedriver + 3391260
-2   chromedriver                        0x0000000102a30fcc chromedriver + 217036
-3   chromedriver                        0x0000000102a158ac chromedriver + 104620
-4   chromedriver                        0x0000000102a7bef0 chromedriver + 524016
-5   chromedriver                        0x0000000102a89300 chromedriver + 578304
-6   chromedriver                        0x0000000102a56010 chromedriver + 368656
-7   chromedriver                        0x0000000102d7839c chromedriver + 3654556
-8   chromedriver                        0x0000000102d7bc4c chromedriver + 3669068
-9   chromedriver                        0x0000000102d8014c chromedriver + 3686732
-10  chromedriver                        0x0000000102d7c654 chromedriver + 3671636
-11  chromedriver                        0x0000000102d5ab40 chromedriver + 3533632
-12  chromedriver                        0x0000000102d94414 chromedriver + 3769364
-13  chromedriver                        0x0000000102d94578 chromedriver + 3769720
-14  chromedriver                        0x0000000102da90f0 chromedriver + 3854576
-15  libsystem_pthread.dylib             0x000000019594426c _pthread_start + 148
-16  libsystem_pthread.dylib             0x000000019593f08c thread_start + 8
-</msg>
 </errors>
 </robot>
