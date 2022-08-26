@@ -18,9 +18,9 @@ ebay
     Get to ebay
     Search SteamDeck
     # number of items by counting element
-    ${count}=    Get Element Count    xpath: //ul[@class="srp-results srp-list clearfix"]
+    ${count}=    Get Element Count    xpath: //li[@class="s-item s-item__pl-on-bottom s-item--watch-at-corner"]
     # Number of results found
     ${num}=    Get Text    xpath: //span[@class="BOLD"]
-    Run Keyword If    ${count} - 6 == '${num}'    Correct    ELSE    Wrong
+    Log To Console    ${count}    
     
     
