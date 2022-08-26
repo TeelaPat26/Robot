@@ -5,8 +5,6 @@ ${google}    https://google.com
 ${browser}    chrome
 ${shopee}    https://shopee.co.th
 *** Keywords ***
-
-*** Test Cases ***
 Get to Shopee
     [Documentation]    This test go to Shopee Website
     [Tags]    Function
@@ -28,3 +26,9 @@ Search Steam Deck
     [Documentation]    Search for steam deck in the marketplace
     Input Text    xpath: //input[@class="shopee-searchbar-input__input"]    Steam Deck
     Click Element   xpath: //button[@class="btn btn-solid-primary btn--s btn--inline shopee-searchbar__search-button"]
+*** Test Cases ***
+Shopee Search
+    Get to Shopee
+    Select Language
+    Close Ad
+    Search Steam Deck

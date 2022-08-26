@@ -1,107 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220826 12:25:45.184" rpa="false" schemaversion="3">
-<suite id="s1" name="shopeeSteamDeck" source="/Users/aum/Desktop/CWN Part-time/shopeeSteamDeck.robot">
-<test id="s1-t1" name="Get to Shopee" line="10">
+<robot generator="Robot 5.0.1 (Python 3.10.5 on darwin)" generated="20220826 14:20:13.389" rpa="false" schemaversion="3">
+<suite id="s1" name="Ebaycount" source="/Users/aum/Desktop/CWN Part-time/ebaycount.robot">
+<test id="s1-t1" name="ebay" line="17">
+<kw name="Get to ebay">
 <kw name="Open Browser" library="Selenium2Library">
-<arg>${google}</arg>
-<arg>chrome</arg>
+<arg>${ebay}</arg>
+<arg>${browser}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20220826 12:25:45.281" level="INFO">Opening browser 'chrome' to base url 'https://google.com'.</msg>
-<status status="PASS" starttime="20220826 12:25:45.281" endtime="20220826 12:25:48.735"/>
+<msg timestamp="20220826 14:20:13.497" level="INFO">Opening browser 'chrome' to base url 'https://www.ebay.com/'.</msg>
+<status status="PASS" starttime="20220826 14:20:13.496" endtime="20220826 14:20:17.452"/>
 </kw>
-<kw name="Maximize Browser Window" library="Selenium2Library">
-<doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20220826 12:25:48.736" endtime="20220826 12:25:48.873"/>
+<status status="PASS" starttime="20220826 14:20:13.496" endtime="20220826 14:20:17.452"/>
 </kw>
+<kw name="Search SteamDeck">
 <kw name="Input Text" library="Selenium2Library">
-<arg>xpath://input[@class="gLFyf gsfi"]</arg>
-<arg>shopee</arg>
+<arg>id:gh-ac</arg>
+<arg>steamdeck</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220826 12:25:48.873" level="INFO">Typing text 'shopee' into text field 'xpath://input[@class="gLFyf gsfi"]'.</msg>
-<status status="PASS" starttime="20220826 12:25:48.873" endtime="20220826 12:25:48.946"/>
-</kw>
-<kw name="Set Selenium Implicit Wait" library="Selenium2Library">
-<arg>0.5s</arg>
-<doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20220826 12:25:48.946" endtime="20220826 12:25:48.948"/>
+<msg timestamp="20220826 14:20:17.454" level="INFO">Typing text 'steamdeck' into text field 'id:gh-ac'.</msg>
+<status status="PASS" starttime="20220826 14:20:17.453" endtime="20220826 14:20:17.592"/>
 </kw>
 <kw name="Click Element" library="Selenium2Library">
-<arg>xpath: //input[@class="gNO89b"]</arg>
+<arg>xpath: //input[@class="btn btn-prim gh-spr"]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220826 12:25:48.948" level="INFO">Clicking element 'xpath: //input[@class="gNO89b"]'.</msg>
-<status status="PASS" starttime="20220826 12:25:48.948" endtime="20220826 12:25:51.327"/>
+<msg timestamp="20220826 14:20:17.592" level="INFO">Clicking element 'xpath: //input[@class="btn btn-prim gh-spr"]'.</msg>
+<status status="PASS" starttime="20220826 14:20:17.592" endtime="20220826 14:20:19.522"/>
 </kw>
-<kw name="Wait Until Element Contains" library="Selenium2Library">
-<arg>xpath: //h3[@class="LC20lb MBeuO DKV0Md"]</arg>
-<arg>Shopee Thailand</arg>
-<doc>Waits until the element ``locator`` contains ``text``.</doc>
-<status status="PASS" starttime="20220826 12:25:51.327" endtime="20220826 12:25:51.347"/>
+<status status="PASS" starttime="20220826 14:20:17.453" endtime="20220826 14:20:19.522"/>
 </kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>xpath: //h3[@class="LC20lb MBeuO DKV0Md"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220826 12:25:51.347" level="INFO">Clicking element 'xpath: //h3[@class="LC20lb MBeuO DKV0Md"]'.</msg>
-<status status="PASS" starttime="20220826 12:25:51.347" endtime="20220826 12:25:57.010"/>
+<kw name="Get Element Count" library="Selenium2Library">
+<var>${count}</var>
+<arg>xpath: //ul[@class="srp-results srp-list clearfix"]</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20220826 14:20:19.534" level="INFO">${count} = 1</msg>
+<status status="PASS" starttime="20220826 14:20:19.523" endtime="20220826 14:20:19.534"/>
 </kw>
-<doc>This test go to Shopee Website</doc>
-<tag>Function</tag>
-<status status="PASS" starttime="20220826 12:25:45.280" endtime="20220826 12:25:57.010"/>
+<kw name="Get Text" library="Selenium2Library">
+<var>${num}</var>
+<arg>xpath: //span[@class="BOLD"]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20220826 14:20:19.550" level="INFO">${num} = valve</msg>
+<status status="PASS" starttime="20220826 14:20:19.534" endtime="20220826 14:20:19.550"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${count} - 6 == '${num}'</arg>
+<arg>Correct</arg>
+<arg>ELSE</arg>
+<arg>Wrong</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Wrong">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Wrong!</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20220826 14:20:19.551" endtime="20220826 14:20:19.551"/>
+</kw>
+<status status="PASS" starttime="20220826 14:20:19.551" endtime="20220826 14:20:19.551"/>
+</kw>
+<status status="PASS" starttime="20220826 14:20:19.551" endtime="20220826 14:20:19.551"/>
+</kw>
+<status status="PASS" starttime="20220826 14:20:13.496" endtime="20220826 14:20:19.551"/>
 </test>
-<test id="s1-t2" name="Select Language" line="20">
-<kw name="Wait Until Page Contains Element" library="Selenium2Library">
-<arg>class:language-selection__title</arg>
-<doc>Waits until the element ``locator`` appears on the current page.</doc>
-<status status="PASS" starttime="20220826 12:25:57.011" endtime="20220826 12:25:57.020"/>
-</kw>
-<kw name="Click Button" library="Selenium2Library">
-<arg>xpath://button[@class="shopee-button-outline shopee-button-outline--primary-reverse"]</arg>
-<doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20220826 12:25:57.021" level="INFO">Clicking button 'xpath://button[@class="shopee-button-outline shopee-button-outline--primary-reverse"]'.</msg>
-<status status="PASS" starttime="20220826 12:25:57.021" endtime="20220826 12:25:57.080"/>
-</kw>
-<doc>Language Selection</doc>
-<status status="PASS" starttime="20220826 12:25:57.011" endtime="20220826 12:25:57.080"/>
-</test>
-<test id="s1-t3" name="Close Ad" line="24">
-<kw name="Click Element At Coordinates" library="Selenium2Library">
-<arg>xpath: //input[@class="shopee-searchbar-input__input"]</arg>
-<arg>10</arg>
-<arg>200</arg>
-<doc>Click the element ``locator`` at ``xoffset/yoffset``.</doc>
-<msg timestamp="20220826 12:25:57.081" level="INFO">Clicking element 'xpath: //input[@class="shopee-searchbar-input__input"]' at coordinates x=10, y=200.</msg>
-<status status="PASS" starttime="20220826 12:25:57.081" endtime="20220826 12:25:58.160"/>
-</kw>
-<doc>This will exit ads in Shopee</doc>
-<status status="PASS" starttime="20220826 12:25:57.080" endtime="20220826 12:25:58.160"/>
-</test>
-<test id="s1-t4" name="Search Steam Deck" line="27">
-<kw name="Input Text" library="Selenium2Library">
-<arg>xpath: //input[@class="shopee-searchbar-input__input"]</arg>
-<arg>Steam Deck</arg>
-<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20220826 12:25:58.161" level="INFO">Typing text 'Steam Deck' into text field 'xpath: //input[@class="shopee-searchbar-input__input"]'.</msg>
-<status status="PASS" starttime="20220826 12:25:58.161" endtime="20220826 12:25:58.812"/>
-</kw>
-<kw name="Click Element" library="Selenium2Library">
-<arg>xpath: //button[@class="btn btn-solid-primary btn--s btn--inline shopee-searchbar__search-button"]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20220826 12:25:58.813" level="INFO">Clicking element 'xpath: //button[@class="btn btn-solid-primary btn--s btn--inline shopee-searchbar__search-button"]'.</msg>
-<status status="PASS" starttime="20220826 12:25:58.812" endtime="20220826 12:25:58.912"/>
-</kw>
-<doc>Search for steam deck in the marketplace</doc>
-<status status="PASS" starttime="20220826 12:25:58.160" endtime="20220826 12:25:58.912"/>
-</test>
-<status status="PASS" starttime="20220826 12:25:45.185" endtime="20220826 12:25:58.913"/>
+<status status="PASS" starttime="20220826 14:20:13.389" endtime="20220826 14:20:19.552"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Function</stat>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="shopeeSteamDeck">shopeeSteamDeck</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Ebaycount">Ebaycount</stat>
 </suite>
 </statistics>
 <errors>

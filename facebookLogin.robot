@@ -32,7 +32,10 @@ Facebook Login
     Input Text    name:email    ${FACEBOOK_ID}
     Input Password    name:pass    ${FACEBOOK_PW}    
     Click Button    name:login 
-    
+    IF    ${True}
+        Log    This line IS executed.
+    END
+
     
 
 
