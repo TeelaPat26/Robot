@@ -1,0 +1,15 @@
+# for folder use this 
+# <folder name>/
+# exmple:
+# pung/
+
+# for files use this
+# <file name>
+# exmple:
+# test.py
+
+# for all files type
+# <*.{file type}>
+# example:
+*.xml
+*.html
